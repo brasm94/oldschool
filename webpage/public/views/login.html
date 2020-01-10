@@ -1,0 +1,21 @@
+<md-dialog aria-label="Mango (Fruit)" md-theme="other">
+	<md-input-container style="padding-left: 2em; padding-right:2em">
+
+	<md-input > Username</md-input>
+	<input  name="login" >
+</md-input-container>
+	<md-input-container style="padding-left: 2em; padding-right:2em">
+	<md-input style=""> Password</md-input>
+	<input  type="password" data-ng-model="maskedValue">
+</md-input-container>
+    <md-dialog-actions layout="row" layout-align="end end">
+      <!-- <span flex></span> -->
+      <md-button aign="center center" ng-click="login()" >
+        log in
+      </md-button>
+      <md-button align="center center" ng-click="cancel()" id="cancelBtn" >
+        cancel
+      </md-button>
+
+    </md-dialog-actions>
+</md-dialog>

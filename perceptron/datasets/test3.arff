@@ -1,0 +1,18 @@
+@relation vote3
+@attribute 'handicapped-infants' { 'n', 'y'}
+@attribute 'weirdo' { 'n' , 'y' }
+@attribute 'Class' {0,1}
+@data
+'n', 'n', 1
+'n', 'y', 1
+'n', 'y', 1
+'n', 'n', 1
+'y', 'y', 1
+'y', 'y', 1
+'y', 'y', 1
+'y', 'y', 1
+'y', 'y', 1
+'y', 'n', 0 
+'y', 'n', 0
+'y', 'n', 0
+'y', 'n', 0

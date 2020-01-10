@@ -1,0 +1,35 @@
+<h2></h2>
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+<div style="padding-left:3em">
+  <md-button md-theme="default" class="md-raised md-primary BIG" ng-href='/#!/chat'>{{ (isLoggedIn ? 'Answer A Question' : 'Ask us A Question') }}</md-button>
+  <md-button md-theme="default" class="md-raised md-primary BIG" ng-href='/#!/faqs'>{{ (isLoggedIn ? 'Update the FAQ' : 'Frequent Questions') }}</md-button>
+</div>
+</md-content>
+<!-- FAQ portion -->
+<md-content ng-show="!isLoggedIn" class="md-padding" layout-xs="column" layout="row" layout-align="center">
+  <div flex-xs flex-gt-xs="80" layout="column">
+    <h2>Top 5 FAQs</h2>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="faq in faqs | limitTo:5">
+        <div class="md-list-item-text">
+          <div layout="row">
+            <div layout="column">
+              <h3 md-theme="other" md-colors="{color: 'primary-500'}">Q: {{faq.question}}</h3>
+              <h4>A: {{faq.answer}}</h4>
+            </div>
+            <span flex> </span>
+            <div ng-show="!isLoggedIn" layout="row" layout-align="end end">
+              <h4 class="md-subhead">
+                <!-- <i>updated {{faq.updated | timefrom:false:false }}</i> -->
+              </h4>
+            </div>
+          </div>
+        </div>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+  </div>
+</md-content>
+
+<!-- end -->
+
+

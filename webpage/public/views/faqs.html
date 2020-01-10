@@ -1,0 +1,62 @@
+<h1 align=center>FAQs</h1>
+
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+
+
+  <div flex-xs flex-gt-xs="80" layout="column">
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="faq in faqs">
+        <div class="md-list-item-text">
+          <div layout="row">
+            <div layout="column">
+              <h3 md-theme="other" md-colors="{color: 'primary-500'}">Q: {{faq.question}}</h3>
+               <h4>A: {{faq.answer}}</h4>
+               <a class="link" ng-show="faq.link" ng-href="{{faq.link}}{{hash}}">{{faq.link}}</a>
+            </div>
+            <span flex> </span>
+            <div ng-show="!isLoggedIn" layout="row" layout-align="end end">
+              <h4 class="md-subhead">
+                <i>updated {{faq.updated | timefrom:false:false }}</i>
+              </h4>
+            </div>
+          </div>
+          <md-button ng-show="isLoggedIn" class="md-secondary md-primary md-flat" ng-click="ctrl.onEdit($event, faq)">Edit</md-button>
+          <md-button ng-show="isLoggedIn" class="md-secondary md-primary md-flat" ng-click="ctrl.onDelete($event, faq)">Delete</md-button>
+        </div>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      <form name="faqAddForm" ng-submit="ctrl.onSubmitNewFAQ()">
+        <md-list-item ng-show="isLoggedIn" class="md-3-line">
+          <div class="md-list-item-text">
+            <md-input-container>
+              <label>Question</label>
+              <input name="question" ng-model="newFAQ.question" required md-maxlength="255" minlength="4">
+              <div ng-messages="faqAddForm.lastName.$error" ng-show="faqAddForm.lastName.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Answer</label>
+              <input name="question" ng-model="newFAQ.answer" required md-maxlength="255" minlength="4">
+              <div ng-messages="faqAddForm.lastName.$error" ng-show="faqAddForm.lastName.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+            <md-input-container>
+                <label>Link</label>
+                <input type="url" name="link" ng-model="newFAQ.link">
+                <span class="error" ng-show="myForm.input.$error.url">
+                    Not valid url!</span>
+              </div>
+              </md-input-container>
+            <md-button type="submit" class="md-secondary md-primary md-flat">Add</md-button>
+          </div>
+        </md-list-item>
+      </form>
+    </md-list>
+  </div>
+</md-content>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>BYU FAQs</title>
+	<link rel="icon" id="favoicon" type="image/x-icon" href="/favoicon1.ico" />
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- START LOCAL LINKS -->
+	<!-- <link rel="stylesheet" type="text/css" href="angular-material/angular-material.min.css"/>
+	<script type="text/javascript" src="firebase/firebase-app.js"></script>
+	<script type="text/javascript" src="firebase/firebase-database.js"></script>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript" src="angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="angular-messages/angular-messages.js"></script>
+	<script type="text/javascript" src="angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="angularfire/dist/angularfire.js"></script> -->
+	<!-- END LOCAL LINKS -->
+
+	<!-- START CDN LINKS -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.min.css"
+	/>
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-messages.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.min.js"></script>
+	<script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+	<!-- END CDN LINKS -->
+
+
+	<!-- START APP FILES -->
+	<link rel="stylesheet" type="text/css" href="build/main.css">
+	<script type="text/javascript" src="build/main.js"></script>
+	<!-- END APP FILES -->
+
+	<body ng-app="byu-faq" ng-controller="MainController as app" layout-fill>
+
+		<!-- <header>
+			<h1 flex >BYU Information Desk</h1>
+			<div layout="column">
+				<md-nav-bar md-selected-nav-item="currentTab" layout-align="center">
+					<span flex hide show-gt-sm class="we-have-answers">We have the answers!</span>
+					<span flex></span>
+					<md-nav-item md-nav-href='/#!/home' name="home">
+						<md-icon aria-label="Home">home</md-icon> Home</md-nav-item>
+					<md-nav-item md-nav-href='/#!/faqs' name="faqs">
+						<md-icon aria-label="FAQs">forum</md-icon> FAQs</md-nav-item>
+					<md-nav-item md-nav-href='/#!/chat' name="chat">
+						<md-icon aria-label="Answer A Question">chat_buttle</md-icon> {{ (isLoggedIn ? 'Answer A Question' : 'Ask A Question') }}</md-nav-item>
+				</md-nav-bar>
+				<div layout="row">
+					<div flex></div>
+					<md-button class="md-flat md-primary" ng-show="isLoggedIn" ng-click="app.toggleLogin()">Logout</md-button>
+					<md-button class="md-flat md-primary" ng-hide="isLoggedIn" ng-click="app.toggleLogin()">Employee Login</md-button>
+
+				</div>
+			</div>
+		</header> -->
+
+		<header>
+			<div layout="column">
+				<div flex layout="column" layout-gt-sm="row">
+					<h1 flex>BYU Information Desk</h1>
+					<md-button class="md-flat md-primary" ng-show="isLoggedIn" ng-click="app.toggleLogin()">Logout</md-button>
+					<md-button class="md-flat md-primary" ng-hide="isLoggedIn" ng-click="app.toggleLogin()">Employee Login</md-button>
+				</div>
+				<span flex hide show-gt-sm class="we-have-answers">We have the answers!</span>
+				<div layout="column">
+					<md-nav-bar md-selected-nav-item="currentTab" layout-align="center">
+							<span flex></span>
+						<md-nav-item md-nav-href='/#!/home' name="home">
+							<md-icon aria-label="Home">home</md-icon> Home
+						</md-nav-item>
+						<md-nav-item md-nav-href='/#!/faqs' name="faqs">
+							<md-icon aria-label="FAQs">forum</md-icon> FAQs
+						</md-nav-item>
+						<md-nav-item md-nav-href='/#!/chat' name="chat">
+							<md-icon aria-label="Answer A Question">chat_buttle</md-icon> {{ (isLoggedIn ? 'Answer A Question' : 'Ask A Question') }}
+						</md-nav-item>
+					</md-nav-bar>
+				</div>
+			</div>
+		</header>
+
+				<div ng-view class="main-content"></div>
+
+
+		<footer>
+			<md-toolbar class="md-scroll-shrink">
+				<div layout="row" layout-align="center start">
+					<div class="footer-section" layout="column" layout-align="start start">
+						<h3>Hours:</h3>
+						<label class="label">Monday - Saturday 8am-10pm</label>
+						<label class="label">Hours vary over holidays</label>
+					</div>
+					<div class="footer-section" layout="column" layout-align="start start">
+						<h3>Contact:</h3>
+						<label class="label">(801)-422-4313</label>
+						<label class="label">2300 Wilkinson Center</label>
+						<label class="label">across from Jamba Juice</label>
+					</div>
+				</div>
+			</md-toolbar>
+		</footer>
+	</body>
+
+</html>

@@ -1,0 +1,75 @@
+<md-content ng-show="isLoggedIn" class="md-padding" layout-xs="column" layout="row" layout-align="center">
+
+  <div flex-xs flex-gt-xs="60" layout="column">
+
+    <md-card md-theme="other" ng-repeat="item in askedQuestions | filter:{answered:false, onFAQ:false}">
+
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-head">{{item.question}}</span>
+          <span class="md-subhead">{{item.created | timefrom }}</span>
+        </md-card-title-text>
+
+        <md-card-actions layout="center">
+          <md-button class="md-flat md-secondary md-button md-default-theme" ng-click="ctrl.onRespond(item)">Respond</md-button>
+        </md-card-actions>
+
+      </md-card-title>
+
+    </md-card>
+
+    <md-card flex md-theme="default" ng-repeat="item in askedQuestions | filter:{answered:true, onFAQ:false}">
+
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-head">{{item.question}}</span>
+          <span class="md-subhead">{{item.answer}}</span>
+          <span class="md-subhead">{{item.created | timefrom }}</span>
+        </md-card-title-text>
+
+        <md-card-actions layout="center">
+          <md-button class="md-flat md-secondary md-primary md-button md-default-theme" ng-click="ctrl.onDelete(item)">Delete</md-button>
+          <md-button class="md-flat md-secondary md-primary md-button md-default-theme" ng-click="ctrl.onAddToFAQ(item)">Add to FAQ</md-button>
+        </md-card-actions>
+
+      </md-card-title>
+
+    </md-card>
+
+  </div>
+</md-content>
+
+<!-- This is for a Student or someone NOT logged in as an employee -->
+
+<md-content ng-show="!isLoggedIn" class="md-padding" layout="column" layout-align="center center">
+
+
+  <div class="questions" ng-repeat="item in myQuestions"  flex-xs flex-gt-xs="60">
+
+    <md-card md-theme="{{ item.isQuestion ? 'other' : 'default' }}" id="{{ item.isQuestion ? 'chatQuestion' : 'chatAnswer' }}">
+      <md-card-title>
+        <md-card-title-text>
+          <div layout="row">
+            <span class="md-head">{{item.msg}}</span>
+            <span flex></span>
+            <span class="md-subhead">{{ item.created | timefrom:false:false }}</span>
+          </div>
+
+        </md-card-title-text>
+        <md-card-actions>
+        </md-card-actions>
+
+      </md-card-title>
+    </md-card>
+  </div>
+
+
+  <form id="chatForm" name="askForm" ng-submit="ctrl.onSubmitQuestion()" >
+    <h2 ng-show="!myQuestions.length">Ask Us A Question!</h2>
+    <md-input-container>
+      <label>Question</label>
+      <input name="question" ng-model="newQuestion" required md-maxlength="140" minlength="4" >
+    </md-input-container>
+    <md-button type="submit" class="md-secondary md-primary md-flat">Submit</md-button>
+  </form>
+</md-content>
