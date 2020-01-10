@@ -1,0 +1,13 @@
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe.manifest
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.application
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.pdb
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.MainForm.resources
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.Properties.Resources.resources
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.csproj.GenerateResource.Cache
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.csproj.CoreCompileInputs.cache
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe.manifest
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.application
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Brian Rasmussen\Desktop\GeneSequenceAlignment\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.csprojResolveAssemblyReference.cache
