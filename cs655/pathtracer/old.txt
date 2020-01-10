@@ -1,0 +1,37 @@
+double theta = dotProduct(norm,ray);
+        double n1 = 1.0;
+        double n2 =  mat.getRefra();
+		vector<double> inorm = norm;
+		// if(dray.getMedium() != 1)
+		// {
+		// 	swap(n1,n2);
+		// 	mulVec(inorm,-1.0);
+		// }
+		if(theta < 0)
+		{
+			theta *= -1;
+			// return {0,1,0};
+		}
+		else 
+		{
+			swap(n1,n2);
+			mulVec(inorm,-1.0);
+
+			// return {1,0,0};
+		}
+		// double left_part_scalar = (n1/n2);
+        // double right_part_scalar = (n1/n2) * cos(theta) - sqrt(1 + (n1/n2)*(n1/n2) * (cos(theta * cos(theta)) -1));
+        // rand_ray = {left_part_scalar * ray[0] + right_part_scalar * inorm[0],
+        //                     left_part_scalar * ray[1] + right_part_scalar * inorm[1],
+        //                     left_part_scalar * ray[2] + right_part_scalar * inorm[2]};
+		double eta = n1/n2;
+		double k = 1 - eta * eta * (1 - theta * theta);
+		if (k < 0)
+		{
+			printf("here\n");
+			// return {0,0,0};
+			return bcolor;
+		}
+		rand_ray = { eta * ray[0] + (eta * theta - sqrt(k)) * inorm[0],
+						eta * ray[1] + (eta * theta - sqrt(k)) * inorm[1],
+						eta * ray[2] + (eta * theta - sqrt(k)) * inorm[2]};

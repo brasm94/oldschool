@@ -1,0 +1,21 @@
+Brian Rasmussen
+
+Problem 1
+a) False
+b) True
+c) False 
+d) False
+e) True
+
+Problem 2
+
+
+Problem 3
+
+Problem 4
+a) IP:93.184.216.34 TTL:86400sec or 1Day
+b) 19 msec
+c) It did because the TTL is 75005 so it looks like it was cached 3 hours ago.
+
+Problem 5
+

@@ -1,0 +1,11 @@
+git rebase --interactive f35dd0b
+
+git rebase --edit-todo
+
+change the first "pick" to "edit"
+
+Maybe I'll have to update the tutorial to use edit, instead of break.
+make a change to a file now
+
+
+okay did it

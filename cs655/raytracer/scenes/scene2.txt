@@ -1,0 +1,27 @@
+Scene s = Scene();
+	vector<double> diff1s = {.2,.5,1};
+	vector<double> spec1s = {1,1,0};
+	Material ms1 = Material(diff1s,spec1s,2);
+	Sphere sp = Sphere(3,3,0,5,ms1);
+	vector<double> diff2s = {1,1,0};
+	vector<double> spec2s = {1,0,1};
+	Material ms2 = Material(diff2s,spec2s,2);
+	Sphere sp2 = Sphere(-3,-3,0,3,ms2);
+	// vector<double> diff = {0,1,1};
+	// vector<double> spec1 = {1,1,1};
+	vector<double> diff2 = {0.1,0.1,0.1};
+	vector<double> spec2 = {0.0,0.0,0.0};
+	Material bg = Material(diff2,spec2,1);
+	Camera cam = Camera(0,0,100,0,0,0);
+	LightSource ls = LightSource(-1,0,0,0,1,0);
+	s.addSphere(sp);
+	s.addSphere(sp2);
+	s.addCamera(cam);
+	s.setViewPort(NCOLS,NROWS);
+	s.addBGColor(bg);
+	vector<vector<vector<double>>> pixels(NROWS, vector<vector<double>>(NCOLS, vector<double>(3)));
+	s.setWindowSize(-10,10,-10,10,10);
+	s.getWindowPixels(pixels);
+	// vector<double> ld = {-1,0,-1};
+	s.addLightSource(ls);
+	rayTrace(

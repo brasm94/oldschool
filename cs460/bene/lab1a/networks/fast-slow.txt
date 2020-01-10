@@ -1,0 +1,9 @@
+a b
+b a
+b c
+c b
+
+a b 1Mbps 100ms
+b a 1Mbps 100ms
+b c 256Kbps 100ms
+c b 256Kbps 100ms

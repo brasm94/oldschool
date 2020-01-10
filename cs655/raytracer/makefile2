@@ -1,0 +1,27 @@
+CXX=g++ 
+CXXFLAGS = -Wall -g
+OBJS = main.o material.o scene.o sphere.o camera.o mymath.o lightsource.o objects.o triangle.o
+run:demo
+	./demo
+demo: $(OBJS)
+	$(CXX) $(CXXFLAGS) -o demo $(OBJS)
+main.o : main.cpp 
+	$(CXX) $(CXXFLAGS) -c main.cpp
+scene.o : scene.cpp scene.h
+	$(CXX) $(CXXFLAGS) -c scene.cpp
+sphere.o : sphere.cpp sphere.h
+	$(CXX) $(CXXFLAGS) -c sphere.cpp
+camera.o : camera.cpp camera.h
+	$(CXX) $(CXXFLAGS) -c camera.cpp
+mymath.o : mymath.cpp mymath.h
+	$(CXX) $(CXXFLAGS) -c mymath.cpp
+material.o : material.cpp material.h
+	$(CXX) $(CXXFLAGS) -c material.cpp
+lightsource.o : lightsource.cpp lightsource.h
+	$(CXX) $(CXXFLAGS) -c lightsource.cpp
+objects.o : objects.cpp objects.h
+	$(CXX) $(CXXFLAGS) -c objects.cpp
+triangle.o : triangle.cpp triangle.h
+	$(CXX) $(CXXFLAGS) -c triangle.cpp
+clean:
+	rm demo *.o

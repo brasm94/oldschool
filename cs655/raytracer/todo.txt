@@ -1,0 +1,2 @@
+1) Need to do Bounding box for sphere
+2) Need to make root Bbox
